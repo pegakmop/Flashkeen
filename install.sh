@@ -14,7 +14,11 @@ $OPKG_BIN install curl
 
 mkdir -p /opt/bin
 
-curl -L -s "https://github.com/miha75vu-bit/Flashkeen/releases/download/keenetic%2Cnetcraze%2Ckeensnap/flashkeen.sh" -o /opt/bin/flashkeen
+echo "Скачиваю Flashkeen..."
+curl -L -s "https://github.com/miha75vu-bit/Flashkeen/releases/download/keenetic%2Cnetcraze%2Ckeensnap/flashkeen.sh" \
+  -o /opt/bin/flashkeen
+
 chmod +x /opt/bin/flashkeen
 
-echo "Flashkeen установлен. Запускайте командой: flashkeen"
+echo "Flashkeen установлен. Запускайте: flashkeen"
+echo "При первом запуске он сам создаст алиасы Flashkeen и flash (если нужно)."
