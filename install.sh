@@ -20,5 +20,9 @@ curl -L -s "https://github.com/miha75vu-bit/Flashkeen/releases/download/keenetic
 
 chmod +x /opt/bin/flashkeen
 
-echo "Flashkeen установлен. Запускайте: flashkeen"
-echo "При первом запуске он сам создаст алиасы Flashkeen и flash (если нужно)."
+# Алиасы для удобного запуска
+ln -sf /opt/bin/flashkeen /opt/bin/Flashkeen
+ln -sf /opt/bin/flashkeen /opt/bin/flash
+
+echo "Flashkeen установлен."
+echo "Запуск: flashkeen  или  Flashkeen  или  flash"
