@@ -1,4 +1,3 @@
-# Flashkeen
 # Flashkeen — простое управление дисковыми разделами и Entware на Keenetic/Netcraze
 
 `Flashkeen` — интерактивный консольный помощник для Keenetic (Entware), который превращает рутину с дисками и Entware в понятное меню из нескольких пунктов.  
@@ -53,7 +52,7 @@
 ## Требования
 
 - Роутер Keenetic с включённой поддержкой Entware.
-- Установленное Entware (наличие `/opt` и `/opt/bin`).
+- Установленное Entware.
 - Доступ к `opkg` (для установки `parted`, `tune2fs`, `ntfs-3g-utils`, `curl` и самого KeenSnap при необходимости).
 
 ## Установка
