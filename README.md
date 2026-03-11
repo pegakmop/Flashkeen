@@ -61,6 +61,8 @@
 
 ## Установка и обновление
 
+Подключиться по SSH к Entware и ввести полностью текст ниже:
+
 opkg update && opkg install curl && \
 curl -L -s "https://raw.githubusercontent.com/miha75vu-bit/Flashkeen/main/install.sh" > /tmp/flashkeen-install.sh && \
 sh /tmp/flashkeen-install.sh
