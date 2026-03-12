@@ -3,8 +3,11 @@
 `Flashkeen` — интерактивный консольный помощник для Keenetic (Entware), который превращает рутину с дисками и Entware в понятное меню из нескольких пунктов.  
 Форматирование, разметка, резервное копирование с KeenSnap и перенос Entware на другой диск — всё в одном меню вызываемом одним словом :)
 
+<img width="1293" height="467" alt="{D389A85E-C40F-48FE-8379-9E8C98172555}" src="https://github.com/user-attachments/assets/183cb23d-39b5-4813-ad24-5c738621cf35" /> <img width="1539" height="400" alt="{36F5FE5A-951F-4EE0-B744-5DE5BD525DCE}" src="https://github.com/user-attachments/assets/b04499bb-834e-45e4-8a6d-6e653456407c" /> <img width="1345" height="371" alt="{E588607A-51FC-4DF7-9BB0-FC345D7783AC}" src="https://github.com/user-attachments/assets/20f1e375-7dd3-4e92-bbd2-e2ef66747f99" />
 
-<img width="1195" height="536" alt="изображение" src="https://github.com/user-attachments/assets/af02c907-3f8d-4cf6-87ec-697bad3304b5" />
+
+
+
 
   Основная задача Флешкина - максимально упростить и уменьшить количество ненужных нажатий, ввода текста и действий вне интерфейса для всего функционала связанного с переносом и установкой Entware на Кинетик - Netcraze.
 
