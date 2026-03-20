@@ -83,7 +83,7 @@ curl -L -s "https://raw.githubusercontent.com/miha75vu-bit/Flashkeen/main/instal
 sh /tmp/flashkeen-install.sh
 
 ## Удаление
-curl -L -s "https://raw.githubusercontent.com/miha75vu-bit/Flashkeen/main/uninstall.sh" > /tmp/flashkeen-uninstall.sh && \
+curl -fL -s "https://raw.githubusercontent.com/miha75vu-bit/Flashkeen/main/uninstall.sh" -o /tmp/flashkeen-uninstall.sh && \
 sh /tmp/flashkeen-uninstall.sh
 
 ## FAQ - здесь будут появляться ответы на вопросы
