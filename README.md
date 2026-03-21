@@ -78,9 +78,7 @@
 
 Подключиться по SSH к Entware и ввести полностью текст ниже:
 
-opkg update && opkg install curl && \
-curl -L -s "https://raw.githubusercontent.com/miha75vu-bit/Flashkeen/main/install.sh" > /tmp/flashkeen-install.sh && \
-sh /tmp/flashkeen-install.sh
+opkg update || true; opkg install curl || true; curl -fsSL https://raw.githubusercontent.com/miha75vu-bit/Flashkeen/main/install.sh | sh
 
 ## Удаление
 curl -fL -s "https://raw.githubusercontent.com/miha75vu-bit/Flashkeen/main/uninstall.sh" -o /tmp/flashkeen-uninstall.sh && \
