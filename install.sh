@@ -9,8 +9,12 @@ fi
 
 # Ставим curl только если его нет
 if ! command -v curl >/dev/null 2>&1; then
-  "$OPKG_BIN" update
-  "$OPKG_BIN" install curl
+  # Не блокируем установку из-за одного "битого" feed в opkg update.
+  "$OPKG_BIN" update || true
+  "$OPKG_BIN" install curl || {
+    echo "Не удалось установить curl через opkg."
+    exit 1
+  }
 fi
 
 mkdir -p /opt/bin
@@ -33,7 +37,7 @@ echo "Проверяю доступные версии Flashkeen..."
 releases_json="$(curl -fsL --connect-timeout 2 --max-time 8 "$RELEASES_API_URL" 2>/dev/null || true)"
 
 if [ -n "$releases_json" ]; then
-  rel_lines="$(printf "%s" "$releases_json" | sed 's/},{/}\n{/g')"
+  rel_lines="$(printf "%s" "$releases_json" | sed 's/},{/\n{/g')"
   OLD_IFS="$IFS"
   IFS='
 '
