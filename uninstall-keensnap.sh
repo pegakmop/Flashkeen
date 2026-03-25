@@ -1,31 +1,37 @@
 #!/bin/sh
 set -e
 
-echo "[1/6] Останавливаю процессы keensnap..."
+echo "[1/5] Останавливаю процессы KeenSnap..."
 pkill -f "/opt/root/KeenSnap/keensnap" 2>/dev/null || true
 pkill -x keensnap 2>/dev/null || true
 
-echo "[2/6] Удаляю файлы/ссылки Keensnap..."
+echo "[2/5] Удаляю файлы KeenSnap..."
 rm -f /opt/bin/keensnap
 rm -f /opt/etc/ndm/schedule.d/99-keensnap.sh
 rm -rf /opt/root/KeenSnap
 
-echo "[3/6] Удаляю логи/временные файлы..."
+echo "[3/5] Удаляю логи и временные файлы..."
 rm -f /opt/var/log/keensnap.log
 rm -f /tmp/keensnap.sh /tmp/keensnap-init /tmp/install.sh
 
-echo "[4/6] Проверяю, что ничего не осталось..."
-command -v keensnap >/dev/null 2>&1 && echo "WARN: keensnap ещё в PATH" || echo "OK: keensnap удалён из PATH"
-[ -e /opt/root/KeenSnap ] && echo "WARN: /opt/root/KeenSnap осталась" || echo "OK: /opt/root/KeenSnap удалена"
-[ -e /opt/etc/ndm/schedule.d/99-keensnap.sh ] && echo "WARN: schedule-хук остался" || echo "OK: schedule-хук удалён"
+echo "[4/5] Проверяю удаление..."
+if command -v keensnap >/dev/null 2>&1; then
+  echo "WARN: keensnap еще в PATH"
+else
+  echo "OK: keensnap удален из PATH"
+fi
 
-echo "[5/6] (Опционально) Удаляю пакеты, которые Keensnap мог доустановить..."
-# ВНИМАНИЕ: удаляй только если они не нужны другим скриптам
-for p in coreutils-split wireguard-tools tar curl; do
-  if opkg list-installed | grep -q "^$p "; then
-    echo "Найден пакет: $p (оставляю на ваше усмотрение)"
-    # opkg remove "$p"   # раскомментируй, если точно хочешь удалить
-  fi
-done
+if [ -e /opt/root/KeenSnap ]; then
+  echo "WARN: /opt/root/KeenSnap осталась"
+else
+  echo "OK: /opt/root/KeenSnap удалена"
+fi
 
-echo "[6/6] Готово."
+if [ -e /opt/etc/ndm/schedule.d/99-keensnap.sh ]; then
+  echo "WARN: /opt/etc/ndm/schedule.d/99-keensnap.sh остался"
+else
+  echo "OK: schedule-хук удален"
+fi
+
+echo "[5/5] Готово."
+exit 0
